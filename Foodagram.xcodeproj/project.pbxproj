@@ -11,6 +11,9 @@
 		BDD6921129B650B300A7C33E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6921029B650B300A7C33E /* ContentView.swift */; };
 		BDD6921329B650B500A7C33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDD6921229B650B500A7C33E /* Assets.xcassets */; };
 		BDD6921629B650B500A7C33E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDD6921529B650B500A7C33E /* Preview Assets.xcassets */; };
+		BDD6921E29B66F8600A7C33E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDD6921D29B66F8600A7C33E /* FirebaseAnalytics */; };
+		BDD6922029B66F8600A7C33E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BDD6921F29B66F8600A7C33E /* FirebaseAnalyticsSwift */; };
+		BDD6922229B66FBE00A7C33E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDD6922129B66FBD00A7C33E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,7 @@
 		BDD6921029B650B300A7C33E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BDD6921229B650B500A7C33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDD6921529B650B500A7C33E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BDD6922129B66FBD00A7C33E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD6922029B66F8600A7C33E /* FirebaseAnalyticsSwift in Frameworks */,
+				BDD6921E29B66F8600A7C33E /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +59,7 @@
 			children = (
 				BDD6920E29B650B300A7C33E /* FoodagramApp.swift */,
 				BDD6921029B650B300A7C33E /* ContentView.swift */,
+				BDD6922129B66FBD00A7C33E /* GoogleService-Info.plist */,
 				BDD6921229B650B500A7C33E /* Assets.xcassets */,
 				BDD6921429B650B500A7C33E /* Preview Content */,
 			);
@@ -83,6 +90,10 @@
 			dependencies = (
 			);
 			name = Foodagram;
+			packageProductDependencies = (
+				BDD6921D29B66F8600A7C33E /* FirebaseAnalytics */,
+				BDD6921F29B66F8600A7C33E /* FirebaseAnalyticsSwift */,
+			);
 			productName = Foodagram;
 			productReference = BDD6920B29B650B300A7C33E /* Foodagram.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = BDD6920229B650B300A7C33E;
+			packageReferences = (
+				BDD6921C29B66F8600A7C33E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BDD6920C29B650B300A7C33E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +141,7 @@
 			files = (
 				BDD6921629B650B500A7C33E /* Preview Assets.xcassets in Resources */,
 				BDD6921329B650B500A7C33E /* Assets.xcassets in Resources */,
+				BDD6922229B66FBE00A7C33E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +352,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BDD6921C29B66F8600A7C33E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BDD6921D29B66F8600A7C33E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDD6921C29B66F8600A7C33E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BDD6921F29B66F8600A7C33E /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDD6921C29B66F8600A7C33E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BDD6920329B650B300A7C33E /* Project object */;
 }
