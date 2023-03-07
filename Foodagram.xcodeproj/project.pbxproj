@@ -25,6 +25,9 @@
 		BDD6923929B6CD2100A7C33E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6923829B6CD2100A7C33E /* HomeView.swift */; };
 		BDD6923C29B6DB9200A7C33E /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = BDD6923B29B6DB9200A7C33E /* FacebookLogin */; };
 		BDD6923F29B6E1F500A7C33E /* FacebookAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6923E29B6E1F500A7C33E /* FacebookAuthentication.swift */; };
+		BDD6924229B7725200A7C33E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6924129B7725200A7C33E /* ProfileView.swift */; };
+		BDD6924529B7757700A7C33E /* LinkAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6924429B7757700A7C33E /* LinkAccounts.swift */; };
+		BDD6924729B7764500A7C33E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6924629B7764500A7C33E /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		BDD6923829B6CD2100A7C33E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BDD6923D29B6DD7A00A7C33E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BDD6923E29B6E1F500A7C33E /* FacebookAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthentication.swift; sourceTree = "<group>"; };
+		BDD6924129B7725200A7C33E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BDD6924429B7757700A7C33E /* LinkAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkAccounts.swift; sourceTree = "<group>"; };
+		BDD6924629B7764500A7C33E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		BDD6920D29B650B300A7C33E /* Foodagram */ = {
 			isa = PBXGroup;
 			children = (
+				BDD6924329B7755C00A7C33E /* Models */,
 				BDD6924029B6E21F00A7C33E /* FacebookAuthentication */,
 				BDD6923D29B6DD7A00A7C33E /* Info.plist */,
 				BDD6923729B6BFD500A7C33E /* Datasources */,
@@ -112,6 +119,7 @@
 				BDD6922829B6934600A7C33E /* RegisterEmailView.swift */,
 				BDD6922A29B693C800A7C33E /* DismissView.swift */,
 				BDD6923829B6CD2100A7C33E /* HomeView.swift */,
+				BDD6924129B7725200A7C33E /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +161,15 @@
 				BDD6923E29B6E1F500A7C33E /* FacebookAuthentication.swift */,
 			);
 			path = FacebookAuthentication;
+			sourceTree = "<group>";
+		};
+		BDD6924329B7755C00A7C33E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BDD6924429B7757700A7C33E /* LinkAccounts.swift */,
+				BDD6924629B7764500A7C33E /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,9 +257,12 @@
 				BDD6923229B6ADB500A7C33E /* AuthenticationRepository.swift in Sources */,
 				BDD6922529B6768E00A7C33E /* AuthenticationView.swift in Sources */,
 				BDD6923929B6CD2100A7C33E /* HomeView.swift in Sources */,
+				BDD6924229B7725200A7C33E /* ProfileView.swift in Sources */,
 				BDD6921129B650B300A7C33E /* ContentView.swift in Sources */,
+				BDD6924729B7764500A7C33E /* User.swift in Sources */,
 				BDD6920F29B650B300A7C33E /* FoodagramApp.swift in Sources */,
 				BDD6922729B68F6900A7C33E /* LoginEmailView.swift in Sources */,
+				BDD6924529B7757700A7C33E /* LinkAccounts.swift in Sources */,
 				BDD6923529B6AE5C00A7C33E /* AuthenticationViewModel.swift in Sources */,
 				BDD6923029B6ABEF00A7C33E /* AuthenticationFirebaseDatasource.swift in Sources */,
 				BDD6922B29B693C800A7C33E /* DismissView.swift in Sources */,

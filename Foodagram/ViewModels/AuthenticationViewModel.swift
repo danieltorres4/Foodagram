@@ -13,6 +13,9 @@ final class AuthenticationViewModel: ObservableObject {
     /// Published properties to store a user and an error to keep control of what action will be done in the view
     @Published var user: User?
     @Published var messageError: String?
+    @Published var linkedAccounts: [LinkAccounts] = []
+    @Published var showAlert: Bool = false
+    @Published var isLinkedAccount: Bool = false
     
     init(authenticationRepository: AuthenticationRepository = AuthenticationRepository()) {
         self.authenticationRepository = authenticationRepository
@@ -68,6 +71,35 @@ final class AuthenticationViewModel: ObservableObject {
             case .failure(let error):
                 self?.messageError = error.localizedDescription
             }
+        }
+    }
+    
+    func getCurrentProvider() {
+        linkedAccounts = authenticationRepository.getCurrentProvider()
+    }
+    
+    /// Helpers that will be used in the view to know if a button is active or not
+    func isEmailAndPasswordLinked() -> Bool {
+        linkedAccounts.contains(where: { $0.rawValue == "password" })
+    }
+    
+    func isFacebookLinked() -> Bool {
+        linkedAccounts.contains(where: { $0.rawValue == "facebook.com" })
+    }
+    
+    func linkFacebook() {
+        authenticationRepository.linkFacebook { [weak self] isSuccess in
+            self?.isLinkedAccount = isSuccess
+            self?.showAlert.toggle()
+            self?.getCurrentProvider()
+        }
+    }
+    
+    func linkEmailAndPassword(email: String, password: String) {
+        authenticationRepository.linkEmailAndPassword(email: email, password: password) { [weak self] isSuccess in
+            self?.isLinkedAccount = isSuccess
+            self?.showAlert.toggle()
+            self?.getCurrentProvider()
         }
     }
 }

@@ -24,4 +24,9 @@ final class FacebookAuthentication {
             completionBlock(.success(token ?? "Empty Token"))
         }
     }
+    
+    /// This method will returned the user's access token if there is a session active
+    func getAccessToken() -> String? {
+        AccessToken.current?.tokenString
+    }
 }
