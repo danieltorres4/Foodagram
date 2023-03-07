@@ -18,6 +18,7 @@ enum AuthenticationSheetView: String, Identifiable{
 
 struct AuthenticationView: View {
     @State private var authenticationSheetView: AuthenticationSheetView?
+    @ObservedObject var authenticationViewModel: AuthenticationViewModel
     
     var body: some View {
         VStack {
@@ -54,7 +55,7 @@ struct AuthenticationView: View {
         .sheet(item: $authenticationSheetView) { sheet in
             switch sheet {
             case .register:
-                RegisterEmailView()
+                RegisterEmailView(authenticationViewModel: authenticationViewModel)
             case .login:
                 LoginEmailView()
             }
@@ -64,6 +65,6 @@ struct AuthenticationView: View {
 
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationView()
+        AuthenticationView(authenticationViewModel: AuthenticationViewModel())
     }
 }

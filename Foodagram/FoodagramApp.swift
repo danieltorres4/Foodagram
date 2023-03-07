@@ -19,10 +19,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct FoodagramApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var authenticationViewModel = AuthenticationViewModel()
     
     var body: some Scene {
         WindowGroup {
-            AuthenticationView()
+            if let user = authenticationViewModel.user {
+                /// The login has been successfully
+                Text("User logged \(user.email)")
+            } else {
+                /// There is no user logged
+                AuthenticationView(authenticationViewModel: authenticationViewModel)
+            }
         }
     }
 }
