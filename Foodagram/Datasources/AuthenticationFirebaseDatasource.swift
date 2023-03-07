@@ -36,4 +36,9 @@ final class AuthenticationFirebaseDatasource {
         
         return .init(email: email)
     }
+    
+    /// This method will allow the user exit his session
+    func logout() throws {
+        try Auth.auth().signOut()
+    }
 }

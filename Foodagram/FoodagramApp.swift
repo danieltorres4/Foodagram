@@ -25,7 +25,7 @@ struct FoodagramApp: App {
         WindowGroup {
             if let user = authenticationViewModel.user {
                 /// The login has been successfully
-                Text("User logged \(user.email)")
+                HomeView(authenticationViewModel: authenticationViewModel)
             } else {
                 /// There is no user logged
                 AuthenticationView(authenticationViewModel: authenticationViewModel)

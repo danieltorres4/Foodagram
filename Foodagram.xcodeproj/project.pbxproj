@@ -22,6 +22,7 @@
 		BDD6923029B6ABEF00A7C33E /* AuthenticationFirebaseDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6922F29B6ABEF00A7C33E /* AuthenticationFirebaseDatasource.swift */; };
 		BDD6923229B6ADB500A7C33E /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6923129B6ADB500A7C33E /* AuthenticationRepository.swift */; };
 		BDD6923529B6AE5C00A7C33E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6923429B6AE5C00A7C33E /* AuthenticationViewModel.swift */; };
+		BDD6923929B6CD2100A7C33E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6923829B6CD2100A7C33E /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BDD6922F29B6ABEF00A7C33E /* AuthenticationFirebaseDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFirebaseDatasource.swift; sourceTree = "<group>"; };
 		BDD6923129B6ADB500A7C33E /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		BDD6923429B6AE5C00A7C33E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		BDD6923829B6CD2100A7C33E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				BDD6922629B68F6900A7C33E /* LoginEmailView.swift */,
 				BDD6922829B6934600A7C33E /* RegisterEmailView.swift */,
 				BDD6922A29B693C800A7C33E /* DismissView.swift */,
+				BDD6923829B6CD2100A7C33E /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				BDD6922929B6934600A7C33E /* RegisterEmailView.swift in Sources */,
 				BDD6923229B6ADB500A7C33E /* AuthenticationRepository.swift in Sources */,
 				BDD6922529B6768E00A7C33E /* AuthenticationView.swift in Sources */,
+				BDD6923929B6CD2100A7C33E /* HomeView.swift in Sources */,
 				BDD6921129B650B300A7C33E /* ContentView.swift in Sources */,
 				BDD6920F29B650B300A7C33E /* FoodagramApp.swift in Sources */,
 				BDD6922729B68F6900A7C33E /* LoginEmailView.swift in Sources */,
