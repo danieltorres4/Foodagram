@@ -16,6 +16,7 @@ final class AuthenticationViewModel: ObservableObject {
     
     init(authenticationRepository: AuthenticationRepository = AuthenticationRepository()) {
         self.authenticationRepository = authenticationRepository
+        getCurrentUser()
     }
     
     /// This method will be called from the view. This method will receive 2 parameters from the textfields: email and password
@@ -29,5 +30,10 @@ final class AuthenticationViewModel: ObservableObject {
                 self?.messageError = error.localizedDescription
             }
         }
+    }
+    
+    /// Extracting the current session in case there is one
+    func getCurrentUser() {
+        self.user = authenticationRepository.getCurrentUser()
     }
 }

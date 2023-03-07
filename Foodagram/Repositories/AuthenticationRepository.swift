@@ -18,4 +18,9 @@ final class AuthenticationRepository {
     func createNewUser(email: String, password: String, completionBlock: @escaping (Result<User, Error>) -> Void) {
         authenticationFirebaseDatasource.createNewUser(email: email, password: password, completionBlock: completionBlock)
     }
+    
+    /// Extracting the current session in case there is one
+    func getCurrentUser() -> User? {
+        authenticationFirebaseDatasource.getCurrentUser()
+    }
 }

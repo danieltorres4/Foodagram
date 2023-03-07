@@ -27,4 +27,13 @@ final class AuthenticationFirebaseDatasource {
             completionBlock(.success(.init(email: email)))
         }
     }
+    
+    /// Extracting the current session in case there is one
+    func getCurrentUser() -> User? {
+        guard let email = Auth.auth().currentUser?.email else {
+            return nil
+        }
+        
+        return .init(email: email)
+    }
 }
