@@ -11,6 +11,7 @@ final class PostViewModel: ObservableObject {
     private let postRepository: PostRepository
     @Published var posts: [PostModel] = []
     @Published var messageError: String?
+    @Published var showAlert: Bool = false
     
     init(postRepository: PostRepository = PostRepository()) {
         self.postRepository = postRepository
@@ -22,6 +23,17 @@ final class PostViewModel: ObservableObject {
             case .success(let postModels):
                 self?.posts = postModels
                 
+            case .failure(let error):
+                self?.messageError = error.localizedDescription
+            }
+        }
+    }
+    
+    func createPost(title: String, place: String, description: String, isFavorited: Bool) {
+        postRepository.createPost(title: title, place: place, description: description, isFavorited: isFavorited) { [weak self] result in
+            switch result {
+            case .success(let post):
+                print("Successful task... Created a new post")
             case .failure(let error):
                 self?.messageError = error.localizedDescription
             }

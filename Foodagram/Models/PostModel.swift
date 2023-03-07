@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct PostModel: Decodable, Identifiable {
+struct PostModel: Decodable, Identifiable, Encodable {
     @DocumentID var id: String?
     let title: String
     let place: String

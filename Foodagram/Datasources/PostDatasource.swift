@@ -34,4 +34,20 @@ final class PostDatasource {
             completionBlock(.success(posts))
         }
     }
+    
+    func createPost(title: String, place: String, description: String, isFavorited: Bool, completionBlock: @escaping (Result<PostModel, Error>) -> Void) {
+        let postModel = PostModel(title: title, place: place, description: description, isFavorited: isFavorited)
+        
+        completionBlock(.success(postModel))
+    }
+    
+    func createNewPost(post: PostModel, completionBlock: @escaping (Result<PostModel, Error>) -> Void) {
+        do {
+            /// Trying to save the post into the database
+            _ = try database.collection(collection).addDocument(from: post)
+            completionBlock(.success(post))
+        } catch {
+            completionBlock(.failure(error))
+        }
+    }
 }

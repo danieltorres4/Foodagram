@@ -17,4 +17,17 @@ final class PostRepository {
     func getAllPosts(completionBlock: @escaping (Result<[PostModel], Error>) -> Void) {
         postDatasource.getAllPosts(completionBlock: completionBlock)
     }
+    
+    func createPost(title: String, place: String, description: String, isFavorited: Bool, completionBlock: @escaping (Result<PostModel, Error>) -> Void) {
+        //postDatasource.createPost(title: title, place: place, description: description, isFavorited: isFavorited, completionBlock: completionBlock)
+        postDatasource.createPost(title: title, place: place, description: description, isFavorited: isFavorited) { [weak self] result in
+            switch result {
+            case .success(let postModel):
+                self?.postDatasource.createNewPost(post: postModel, completionBlock: completionBlock)
+                
+            case .failure(let error):
+                completionBlock(.failure(error))
+            }
+        }
+    }
 }
