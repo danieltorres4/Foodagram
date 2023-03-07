@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var authenticationViewModel: AuthenticationViewModel
+    @StateObject var postViewModel: PostViewModel = PostViewModel()
     
     var body: some View {
         NavigationView {
@@ -17,6 +18,8 @@ struct HomeView: View {
                     Text("Welcome, \(authenticationViewModel.user?.email ?? "No User")")
                         .padding(.top, 32)
                     Spacer()
+                    
+                    PostView(postViewModel: postViewModel)
                 }
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
@@ -28,7 +31,7 @@ struct HomeView: View {
                     }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Home")
+            .navigationTitle("Foodagram 🧁")
             .toolbar {
                 Button("Logout") {
                     authenticationViewModel.logout()
