@@ -7,9 +7,12 @@
 
 import SwiftUI
 import Firebase
+import FacebookLogin
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         FirebaseApp.configure()
         return true
@@ -23,7 +26,7 @@ struct FoodagramApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if let user = authenticationViewModel.user {
+            if let _ = authenticationViewModel.user {
                 /// The login has been successfully
                 HomeView(authenticationViewModel: authenticationViewModel)
             } else {

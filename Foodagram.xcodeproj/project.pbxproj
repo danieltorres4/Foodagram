@@ -23,6 +23,8 @@
 		BDD6923229B6ADB500A7C33E /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6923129B6ADB500A7C33E /* AuthenticationRepository.swift */; };
 		BDD6923529B6AE5C00A7C33E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6923429B6AE5C00A7C33E /* AuthenticationViewModel.swift */; };
 		BDD6923929B6CD2100A7C33E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6923829B6CD2100A7C33E /* HomeView.swift */; };
+		BDD6923C29B6DB9200A7C33E /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = BDD6923B29B6DB9200A7C33E /* FacebookLogin */; };
+		BDD6923F29B6E1F500A7C33E /* FacebookAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6923E29B6E1F500A7C33E /* FacebookAuthentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		BDD6923129B6ADB500A7C33E /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		BDD6923429B6AE5C00A7C33E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		BDD6923829B6CD2100A7C33E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BDD6923D29B6DD7A00A7C33E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BDD6923E29B6E1F500A7C33E /* FacebookAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD6923C29B6DB9200A7C33E /* FacebookLogin in Frameworks */,
 				BDD6922029B66F8600A7C33E /* FirebaseAnalyticsSwift in Frameworks */,
 				BDD6922E29B6967800A7C33E /* FirebaseAuth in Frameworks */,
 				BDD6921E29B66F8600A7C33E /* FirebaseAnalytics in Frameworks */,
@@ -76,6 +81,8 @@
 		BDD6920D29B650B300A7C33E /* Foodagram */ = {
 			isa = PBXGroup;
 			children = (
+				BDD6924029B6E21F00A7C33E /* FacebookAuthentication */,
+				BDD6923D29B6DD7A00A7C33E /* Info.plist */,
 				BDD6923729B6BFD500A7C33E /* Datasources */,
 				BDD6923629B6BFBB00A7C33E /* Repositories */,
 				BDD6923329B6AE4D00A7C33E /* ViewModels */,
@@ -140,6 +147,14 @@
 			path = Datasources;
 			sourceTree = "<group>";
 		};
+		BDD6924029B6E21F00A7C33E /* FacebookAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				BDD6923E29B6E1F500A7C33E /* FacebookAuthentication.swift */,
+			);
+			path = FacebookAuthentication;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,6 +175,7 @@
 				BDD6921D29B66F8600A7C33E /* FirebaseAnalytics */,
 				BDD6921F29B66F8600A7C33E /* FirebaseAnalyticsSwift */,
 				BDD6922D29B6967800A7C33E /* FirebaseAuth */,
+				BDD6923B29B6DB9200A7C33E /* FacebookLogin */,
 			);
 			productName = Foodagram;
 			productReference = BDD6920B29B650B300A7C33E /* Foodagram.app */;
@@ -191,6 +207,7 @@
 			mainGroup = BDD6920229B650B300A7C33E;
 			packageReferences = (
 				BDD6921C29B66F8600A7C33E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BDD6923A29B6DB9100A7C33E /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = BDD6920C29B650B300A7C33E /* Products */;
 			projectDirPath = "";
@@ -229,6 +246,7 @@
 				BDD6923529B6AE5C00A7C33E /* AuthenticationViewModel.swift in Sources */,
 				BDD6923029B6ABEF00A7C33E /* AuthenticationFirebaseDatasource.swift in Sources */,
 				BDD6922B29B693C800A7C33E /* DismissView.swift in Sources */,
+				BDD6923F29B6E1F500A7C33E /* FacebookAuthentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +377,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Foodagram/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Foodagram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -387,6 +406,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Foodagram/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Foodagram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -437,6 +457,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		BDD6923A29B6DB9100A7C33E /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -454,6 +482,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BDD6921C29B66F8600A7C33E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		BDD6923B29B6DB9200A7C33E /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDD6923A29B6DB9100A7C33E /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

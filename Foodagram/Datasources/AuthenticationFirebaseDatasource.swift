@@ -15,6 +15,8 @@ struct User {
 /// This class contains the logic to register with email and password
 ///  It will have a createNewUser method that receives an email, password and a completion block to indicate if an error has ocurred. If an error ocurred, an error will be returned. Otherwise, a user will be returned.
 final class AuthenticationFirebaseDatasource {
+    private let facebookAuthentication = FacebookAuthentication()
+    
     func createNewUser(email: String, password: String, completionBlock: @escaping (Result<User, Error>) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authDataResult, error in
             if let error = error {
@@ -53,6 +55,31 @@ final class AuthenticationFirebaseDatasource {
             
             let email = authDataResult?.user.email ?? "No email"
             completionBlock(.success(.init(email: email)))
+        }
+    }
+    
+    /// Facebook login
+    func loginWithFacebook(completionBlock: @escaping (Result<User, Error>) -> Void) {
+        facebookAuthentication.loginFacebook { result in
+            switch result {
+            case .success(let accessToken):
+                //Creating facebook credential
+                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
+                Auth.auth().signIn(with: credential) { authDataResult, error in
+                    if let error = error {
+                        print("Error while creating a new user with Facebook: \(error.localizedDescription)")
+                        completionBlock(.failure(error))
+                        return
+                    }
+                    
+                    let email = authDataResult?.user.email ?? "No email"
+                    completionBlock(.success(.init(email: email)))
+                }
+                
+            case .failure(let error):
+                print("Error while signing with Facebook: \(error.localizedDescription)")
+                completionBlock(.failure(error))
+            }
         }
     }
 }
