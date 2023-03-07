@@ -28,6 +28,7 @@
 		BDD6924229B7725200A7C33E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6924129B7725200A7C33E /* ProfileView.swift */; };
 		BDD6924529B7757700A7C33E /* LinkAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6924429B7757700A7C33E /* LinkAccounts.swift */; };
 		BDD6924729B7764500A7C33E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6924629B7764500A7C33E /* User.swift */; };
+		BDD6924A29B7B6D900A7C33E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD6924929B7B6D900A7C33E /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BDD6924129B7725200A7C33E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BDD6924429B7757700A7C33E /* LinkAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkAccounts.swift; sourceTree = "<group>"; };
 		BDD6924629B7764500A7C33E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BDD6924929B7B6D900A7C33E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		BDD6920D29B650B300A7C33E /* Foodagram */ = {
 			isa = PBXGroup;
 			children = (
+				BDD6924829B7B6BF00A7C33E /* Utilities */,
 				BDD6924329B7755C00A7C33E /* Models */,
 				BDD6924029B6E21F00A7C33E /* FacebookAuthentication */,
 				BDD6923D29B6DD7A00A7C33E /* Info.plist */,
@@ -170,6 +173,14 @@
 				BDD6924629B7764500A7C33E /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BDD6924829B7B6BF00A7C33E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BDD6924929B7B6D900A7C33E /* ImagePicker.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 				BDD6924529B7757700A7C33E /* LinkAccounts.swift in Sources */,
 				BDD6923529B6AE5C00A7C33E /* AuthenticationViewModel.swift in Sources */,
 				BDD6923029B6ABEF00A7C33E /* AuthenticationFirebaseDatasource.swift in Sources */,
+				BDD6924A29B7B6D900A7C33E /* ImagePicker.swift in Sources */,
 				BDD6922B29B693C800A7C33E /* DismissView.swift in Sources */,
 				BDD6923F29B6E1F500A7C33E /* FacebookAuthentication.swift in Sources */,
 			);
