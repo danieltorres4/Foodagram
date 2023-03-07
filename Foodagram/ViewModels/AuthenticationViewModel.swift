@@ -45,4 +45,17 @@ final class AuthenticationViewModel: ObservableObject {
             print("Error while trying to logout...")
         }
     }
+    
+    /// This method will be called from the LoginEmailView
+    func login(email: String, password: String) {
+        /// [weak self] to avoid retain cycles
+        authenticationRepository.login(email: email, password: password) { [weak self] result in
+            switch result {
+            case .success(let user):
+                self?.user = user
+            case .failure(let error):
+                self?.messageError = error.localizedDescription
+            }
+        }
+    }
 }
