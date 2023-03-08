@@ -33,4 +33,8 @@ final class PostRepository {
     func updatePost(post: PostModel) {
         postDatasource.updatePost(post: post)
     }
+    
+    func deletePost(post: PostModel) {
+        postDatasource.deletePost(post: post)
+    }
 }

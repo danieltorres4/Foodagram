@@ -87,6 +87,15 @@ struct PostView: View {
                         })
                         .tint(.purple)
                     }
+                    
+                    .swipeActions(edge: .leading) {
+                        Button(action: {
+                            postViewModel.deletePost(post: post)
+                        }, label: {
+                            Label("Delete", systemImage: "trash.fill")
+                        })
+                        .tint(.red)
+                    }
                 }
             }
             .task {

@@ -44,4 +44,8 @@ final class PostViewModel: ObservableObject {
         let updatedPost = PostModel(id: post.id, title: post.title, place: post.place, description: post.description, isFavorited: post.isFavorited ? false : true)
         postRepository.updatePost(post: updatedPost)
     }
+    
+    func deletePost(post: PostModel) {
+        postRepository.deletePost(post: post)
+    }
 }

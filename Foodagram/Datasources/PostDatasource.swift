@@ -66,4 +66,14 @@ final class PostDatasource {
             print("An error has been ocurred while updating a post...")
         }
     }
+    
+    /// Deleting a post
+    func deletePost(post: PostModel) {
+        /// Verifying if the post has an ID
+        guard let documentID = post.id else {
+            return
+        }
+        
+        database.collection(collection).document(documentID).delete()
+    }
 }
