@@ -39,4 +39,9 @@ final class PostViewModel: ObservableObject {
             }
         }
     }
+    
+    func updateIsFavoritedProperty(post: PostModel) {
+        let updatedPost = PostModel(id: post.id, title: post.title, place: post.place, description: post.description, isFavorited: post.isFavorited ? false : true)
+        postRepository.updatePost(post: updatedPost)
+    }
 }

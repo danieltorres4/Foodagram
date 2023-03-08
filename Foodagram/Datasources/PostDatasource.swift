@@ -50,4 +50,20 @@ final class PostDatasource {
             completionBlock(.failure(error))
         }
     }
+    
+    /// Method to update some post's properties
+    func updatePost(post: PostModel) {
+        /// Verifying if the post has an ID
+        guard let documentID = post.id else {
+            return
+        }
+        
+        /// If the post has an ID...
+        do {
+            /// Specifying which document we want to update. If the happy path is fullfiled, the info will be updated
+            _ = try database.collection(collection).document(documentID).setData(from: post)
+        } catch {
+            print("An error has been ocurred while updating a post...")
+        }
+    }
 }

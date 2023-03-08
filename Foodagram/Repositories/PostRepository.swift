@@ -19,7 +19,6 @@ final class PostRepository {
     }
     
     func createPost(title: String, place: String, description: String, isFavorited: Bool, completionBlock: @escaping (Result<PostModel, Error>) -> Void) {
-        //postDatasource.createPost(title: title, place: place, description: description, isFavorited: isFavorited, completionBlock: completionBlock)
         postDatasource.createPost(title: title, place: place, description: description, isFavorited: isFavorited) { [weak self] result in
             switch result {
             case .success(let postModel):
@@ -29,5 +28,9 @@ final class PostRepository {
                 completionBlock(.failure(error))
             }
         }
+    }
+    
+    func updatePost(post: PostModel) {
+        postDatasource.updatePost(post: post)
     }
 }

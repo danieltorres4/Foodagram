@@ -79,6 +79,14 @@ struct PostView: View {
                             }
                         }
                     }
+                    .swipeActions(edge: .trailing) {
+                        Button(action: {
+                            postViewModel.updateIsFavoritedProperty(post: post)
+                        }, label: {
+                            Label("Favorite", systemImage: "heart.fill")
+                        })
+                        .tint(.purple)
+                    }
                 }
             }
             .task {
